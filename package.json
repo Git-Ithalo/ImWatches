@@ -1,0 +1,16 @@
+{
+  "name": "imwatches",
+  "version": "1.0.0",
+  "description": "IM Watches - marketplace e SaaS de relojoaria",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "ejs": "^3.1.10",
+    "cookie-parser": "^1.4.6"
+  }
+}

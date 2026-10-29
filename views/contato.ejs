@@ -1,0 +1,17 @@
+<%- include('partials/header', { pageTitle: 'Contato' }) %>
+
+<div class="container">
+  <div class="form-page">
+    <span class="eyebrow">Fale com a gente</span>
+    <h1>Contato</h1>
+    <p class="muted">Dúvidas sobre uma peça, sobre os planos de assinatura ou parcerias — escreva para nós.</p>
+    <form onsubmit="event.preventDefault(); this.querySelector('.form-success')?.remove(); this.insertAdjacentHTML('afterbegin','<div class=\'form-success\'>Mensagem enviada (demonstração). Em breve retornaremos.</div>');">
+      <div class="field"><label>Nome</label><input type="text" required></div>
+      <div class="field"><label>E-mail</label><input type="email" required></div>
+      <div class="field"><label>Mensagem</label><textarea required></textarea></div>
+      <button type="submit" class="btn btn-primary btn-block">Enviar mensagem</button>
+    </form>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

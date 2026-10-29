@@ -1,0 +1,24 @@
+<%- include('partials/header', { pageTitle: 'Marcas' }) %>
+
+<div class="container" style="padding-top:40px;">
+  <span class="eyebrow">Curadoria por marca</span>
+  <h1>As marcas que a IM Watches trabalha</h1>
+  <p class="muted" style="max-width:70ch;">De manufaturas suíças centenárias a marcas japonesas pioneiras em tecnologia e nomes queridos do público brasileiro — conheça a história por trás de cada relógio que vendemos.</p>
+</div>
+
+<div class="container" style="padding:40px 32px 90px;">
+  <div class="brand-list">
+    <% brands.forEach(b => { %>
+      <div class="brand-row">
+        <div>
+          <h3><a href="/marcas/<%= b.slug %>"><%= b.name %></a></h3>
+          <p class="small muted" style="margin:0;"><%= b.country %> · fundada em <%= b.founded %></p>
+          <p style="margin:8px 0 0; max-width:48ch;"><%= b.tagline %></p>
+        </div>
+        <a href="/marcas/<%= b.slug %>" class="btn btn-ghost btn-sm">Ver história</a>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

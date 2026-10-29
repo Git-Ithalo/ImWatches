@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof pageTitle !== 'undefined' ? pageTitle + ' · IM Watches' : 'IM Watches · Curadoria de Alta Relojoaria' %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div></div>
+      <a href="/" class="logo-block">
+        <div class="logo">IM WATCHES</div>
+        <div class="logo-tag">Ajudo você a montar sua coleção</div>
+      </a>
+      <div class="header-icons">
+        <% if (currentStore) { %>
+          <a href="/painel" title="Meu painel">Painel</a>
+        <% } else { %>
+          <a href="/login" title="Entrar">Entrar</a>
+        <% } %>
+        <a href="/planos" title="Planos">Planos</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/" class="<%= path==='/' ? 'active' : '' %>">Início</a></li>
+        <li><a href="/pronta-entrega" class="<%= path && path.startsWith('/pronta-entrega') ? 'active' : '' %>">Pronta Entrega</a></li>
+        <li><a href="/sob-encomenda" class="<%= path && path.startsWith('/sob-encomenda') ? 'active' : '' %>">Sob Encomenda</a></li>
+        <li><a href="/marcas" class="<%= path && path.startsWith('/marcas') ? 'active' : '' %>">Marcas</a></li>
+        <li><a href="/planos" class="<%= path==='/planos' ? 'active' : '' %>">Planos IM Watches</a></li>
+        <li><a href="/sobre" class="<%= path==='/sobre' ? 'active' : '' %>">Sobre</a></li>
+        <li><a href="/contato" class="<%= path==='/contato' ? 'active' : '' %>">Contato</a></li>
+      </ul>
+    </nav>
+  </header>

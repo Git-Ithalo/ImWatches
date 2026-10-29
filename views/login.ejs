@@ -1,0 +1,23 @@
+<%- include('partials/header', { pageTitle: 'Entrar' }) %>
+
+<div class="container">
+  <div class="form-page">
+    <span class="eyebrow">Área do lojista</span>
+    <h1>Acessar minha loja</h1>
+    <% if (error) { %><div class="form-alert"><%= error %></div><% } %>
+    <form method="post" action="/login">
+      <div class="field">
+        <label>E-mail</label>
+        <input type="email" name="email" required>
+      </div>
+      <div class="field">
+        <label>Senha</label>
+        <input type="password" name="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+    </form>
+    <p class="small muted" style="margin-top:16px;">Ainda não tem uma loja? <a href="/cadastro" style="text-decoration:underline;">Cadastre-se</a>.</p>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

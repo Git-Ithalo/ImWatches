@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "rolex",
+    "name": "Rolex",
+    "country": "Suíça",
+    "founded": 1905,
+    "tagline": "A coroa que se tornou sinônimo de precisão",
+    "history": "Fundada em Londres por Hans Wilsdorf e Alfred Davis e transferida para Genebra na década de 1920, a Rolex construiu sua reputação apostando em algo que ninguém levava a sério na época: a precisão de um relógio de pulso. Em 1910 recebeu o primeiro certificado de cronômetro concedido a um relógio de pulso, e em 1926 lançou o Oyster, o primeiro relógio de pulso à prova d'água do mundo, provado publicamente pela nadadora Mercedes Gleitze ao atravessar o Canal da Mancha. Nas décadas seguintes vieram os ícones que moldaram categorias inteiras: o Datejust com a primeira janela de data em 1945, o Submariner para mergulho em 1953, o GMT-Master criado para pilotos em 1954 e o Day-Date, o primeiro relógio a exibir o dia da semana por extenso, em 1956. Até hoje a marca permanece independente e privada, controlada pela Fundação Hans Wilsdorf, e mantém quase toda a produção de seus componentes internamente na Suíça.",
+    "highlight": "Criadora do primeiro relógio de pulso à prova d'água (Oyster, 1926) e do primeiro cronômetro de pulso certificado."
+  },
+  {
+    "slug": "seiko",
+    "name": "Seiko",
+    "country": "Japão",
+    "founded": 1881,
+    "tagline": "A relojoaria japonesa que reinventou o mercado global",
+    "history": "A história da Seiko começa com uma loja de conserto de relógios aberta por Kintaro Hattori em Tóquio em 1881; a marca de relógios de pulso Seiko surgiria décadas depois, em 1924. A empresa entrou para a história em 1969 ao lançar o Astron, o primeiro relógio de pulso de quartzo do mundo, um avanço que provocou a chamada 'crise do quartzo' e transformou toda a indústria relojoeira suíça. A Seiko também foi pioneira em outras frentes: o primeiro relógio automático com data em 1959 (a linha que originou o Alpinist), o primeiro cronógrafo automático de pulso do mundo em 1969 (disputado com a Zenith) e avanços contínuos em movimentos Spring Drive, que combinam a suavidade de um quartzo com a alma mecânica de um automático. Hoje a Seiko mantém linhas que vão de relógios de entrada a alta relojoaria assinada Grand Seiko.",
+    "highlight": "Inventora do relógio de quartzo de pulso (Astron, 1969), evento que mudou a indústria relojoeira mundial."
+  },
+  {
+    "slug": "orient",
+    "name": "Orient",
+    "country": "Japão",
+    "founded": 1950,
+    "tagline": "Tradição japonesa em manufatura própria de calibres automáticos",
+    "history": "A Orient nasceu em 1950 a partir de uma fábrica de relógios japonesa com raízes que remontam a 1901, e rapidamente se tornou conhecida por um diferencial raro entre marcas acessíveis: desenvolver e produzir seus próprios calibres automáticos internamente, sem depender de fornecedores externos. A marca ganhou força no mercado brasileiro a partir das décadas de 1960 e 1970, tornando-se uma das relojoarias japonesas mais populares do país. Linhas como o Bambino, com seu visual vintage e mostrador open-heart, e o Mako/Ray, mergulhadores robustos de excelente custo-benefício, consolidaram a Orient como porta de entrada para o mundo dos relógios mecânicos automáticos.",
+    "highlight": "Uma das poucas marcas do seu segmento de preço que fabrica seus próprios movimentos automáticos in-house."
+  },
+  {
+    "slug": "technos",
+    "name": "Technos",
+    "country": "Brasil / Suíça",
+    "founded": 1971,
+    "tagline": "A marca de relógios mais vendida do Brasil",
+    "history": "A Technos foi fundada em 1971 pelo suíço radicado no Brasil Rolf Erb, e ao longo de mais de cinco décadas se consolidou como a marca de relógios mais vendida do país. Combinando design acessível, tecnologia e parcerias estratégicas de distribuição, a Technos ampliou seu alcance para toda a América Latina, mantendo o compromisso de oferecer relógios de qualidade a preços competitivos. A marca também investiu cedo em relógios híbridos e conectados, unindo estética clássica a funcionalidades digitais, sem abrir mão da tradição relojoeira.",
+    "highlight": "Marca de relógios líder de vendas no Brasil, com origem e engenharia de tradição suíço-brasileira."
+  },
+  {
+    "slug": "tissot",
+    "name": "Tissot",
+    "country": "Suíça",
+    "founded": 1853,
+    "tagline": "Inovação acessível dentro do grupo Swatch",
+    "history": "Fundada em 1853 em Le Locle por Charles-Félicien Tissot e seu filho Charles-Émile, a Tissot está entre as manufaturas suíças mais antigas em atividade contínua. A marca é reconhecida por democratizar inovações relojoeiras: lançou um dos primeiros relógios de bolso com dois fusos horários em 1853, produziu o primeiro relógio de pulso totalmente em pedra em 1985 (o Rock Watch) e o primeiro relógio tátil do mundo em 1999 (o T-Touch). Hoje, integrada ao Swatch Group, a Tissot é célebre por linhas como o PRX, releitura de um modelo dos anos 1970 que se tornou um fenômeno recente de vendas por unir design integrado de pulseira e caixa a um preço acessível para um automático suíço.",
+    "highlight": "Uma das manufaturas suíças mais antigas em atividade, pioneira no relógio tátil T-Touch."
+  },
+  {
+    "slug": "citizen",
+    "name": "Citizen",
+    "country": "Japão",
+    "founded": 1918,
+    "tagline": "Pioneira mundial em movimentos a energia solar",
+    "history": "Fundada em Tóquio em 1918, a Citizen recebeu esse nome em 1930 como um desejo de que seus relógios fossem acessíveis e queridos por 'cidadãos' comuns em todo o mundo. A marca se tornou referência global em tecnologia Eco-Drive, sistema que converte qualquer fonte de luz em energia, eliminando a necessidade de troca de pilhas — uma tecnologia introduzida comercialmente em 1976 e aperfeiçoada continuamente desde então. A Citizen também é reconhecida por recordes de precisão em relógios de quartzo e por sua robusta linha Promaster voltada a mergulho, aviação e atividades ao ar livre.",
+    "highlight": "Pioneira mundial em relógios movidos a luz (tecnologia Eco-Drive), sem necessidade de troca de bateria."
+  }
+]

@@ -1,0 +1,15 @@
+<a class="card-watch" href="/relogio/<%= w.id %>">
+  <div class="thumb">
+    <div class="card-tags">
+      <% if (w.tag === 'novidade') { %><span class="tag tag-novidade">Novidade</span><% } %>
+      <% if (w.category === 'pronta-entrega') { %><span class="tag tag-pronta">Pronta entrega</span><% } else { %><span class="tag tag-encomenda">Sob encomenda</span><% } %>
+    </div>
+    <button class="fav-btn" onclick="event.preventDefault(); toggleFav(this)" aria-label="Favoritar">♡</button>
+    <%- include('watch-svg') %>
+  </div>
+  <div class="brand"><%= w.brand %></div>
+  <h3><%= w.model %></h3>
+  <div class="ref">Ref. <%= w.ref %> · <%= w.year %> · <%= w.condition %></div>
+  <div class="price">R$ <%= w.price.toLocaleString('pt-BR', {minimumFractionDigits: 2}) %></div>
+  <div class="price-sub">R$ <%= (w.price*0.95).toLocaleString('pt-BR', {minimumFractionDigits: 2}) %> no Pix (5% off) · até 10x</div>
+</a>

@@ -1,0 +1,28 @@
+<%- include('partials/header', { pageTitle: watch.model }) %>
+
+<div class="container" style="padding-top:40px; padding-bottom:70px;">
+  <div class="two-col" style="align-items:flex-start;">
+    <div class="thumb" style="border:1px solid var(--line); background:var(--white); display:flex; align-items:center; justify-content:center; padding:40px;">
+      <%- include('partials/watch-svg') %>
+    </div>
+    <div>
+      <div class="brand small" style="letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft);"><a href="/marcas/<%= watch.brandSlug %>"><%= watch.brand %></a></div>
+      <h1><%= watch.model %></h1>
+      <p class="muted">Ref. <%= watch.ref %> · <%= watch.year %> · <%= watch.condition %></p>
+      <div class="price" style="font-size:1.8rem; margin:14px 0 2px;">R$ <%= watch.price.toLocaleString('pt-BR', {minimumFractionDigits:2}) %></div>
+      <div class="price-sub" style="margin-bottom:20px;">R$ <%= (watch.price*0.95).toLocaleString('pt-BR', {minimumFractionDigits:2}) %> no Pix (5% off) · parcelado em até 10x</div>
+      <p><%= watch.description %></p>
+      <table class="table-simple" style="margin:20px 0;">
+        <tr><td><strong>Movimento</strong></td><td><%= watch.movement %></td></tr>
+        <tr><td><strong>Caixa</strong></td><td><%= watch.case %></td></tr>
+        <tr><td><strong>Categoria</strong></td><td><%= watch.category === 'pronta-entrega' ? 'Pronta entrega' : 'Sob encomenda' %></td></tr>
+      </table>
+      <div class="hero-actions">
+        <a href="https://wa.me/5500000000000" class="btn btn-primary" target="_blank" rel="noopener">Falar com especialista</a>
+        <a href="/pronta-entrega" class="btn btn-outline">Voltar ao catálogo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

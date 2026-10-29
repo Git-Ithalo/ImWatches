@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "essencial",
+    "name": "Essencial",
+    "price": 79,
+    "period": "mês",
+    "tagline": "Para quem está começando a vender relógios online",
+    "features": [
+      "Vitrine pública personalizada (imwatches.com.br/loja/seu-nome)",
+      "Até 20 relógios cadastrados no catálogo",
+      "Página de perfil da loja com logo e descrição",
+      "Botão de contato direto via WhatsApp",
+      "Suporte por e-mail em horário comercial"
+    ],
+    "cta": "Começar agora",
+    "highlighted": false
+  },
+  {
+    "slug": "profissional",
+    "name": "Profissional",
+    "price": 199,
+    "period": "mês",
+    "tagline": "Para lojas e revendedores com catálogo em crescimento",
+    "features": [
+      "Tudo do plano Essencial",
+      "Catálogo com até 300 relógios",
+      "Selo de loja verificada IM Watches",
+      "Destaque na busca e na página de novidades",
+      "Estatísticas de visualizações e favoritos",
+      "Suporte prioritário via chat"
+    ],
+    "cta": "Assinar Profissional",
+    "highlighted": true
+  },
+  {
+    "slug": "curadoria",
+    "name": "Curadoria HM",
+    "price": 499,
+    "period": "mês",
+    "tagline": "Para relojoarias e brechós de luxo de alto volume",
+    "features": [
+      "Tudo do plano Profissional",
+      "Catálogo ilimitado de relógios",
+      "Consultoria de precificação e curadoria de peças",
+      "Divulgação nas redes sociais oficiais IM Watches",
+      "Gerente de conta dedicado",
+      "Integração para múltiplos vendedores na mesma loja"
+    ],
+    "cta": "Falar com especialista",
+    "highlighted": false
+  }
+]

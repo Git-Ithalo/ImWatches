@@ -1,0 +1,108 @@
+<%- include('partials/header', { pageTitle: 'Painel' }) %>
+
+<div class="container">
+  <div class="dash-wrap">
+    <aside class="dash-nav">
+      <div class="store-name"><%= store.storeName %></div>
+      <span class="plan-pill"><%= planInfo.name %></span>
+      <ul>
+        <li><a href="/loja/<%= store.slug %>" target="_blank">Ver minha vitrine ↗</a></li>
+        <li><a href="/planos">Trocar de plano</a></li>
+        <li><form method="post" action="/logout"><button type="submit" class="btn btn-ghost btn-sm" style="margin-top:14px;">Sair</button></form></li>
+      </ul>
+    </aside>
+
+    <div>
+      <% if (saved==='perfil') { %><div class="form-success">Perfil atualizado com sucesso.</div><% } %>
+      <% if (saved==='relogio') { %><div class="form-success">Relógio adicionado ao seu catálogo.</div><% } %>
+      <% if (saved==='exclusao') { %><div class="form-success">Relógio removido.</div><% } %>
+      <% if (saved==='limite') { %><div class="form-alert">Você atingiu o limite de relógios do seu plano. Faça upgrade para adicionar mais peças.</div><% } %>
+
+      <div class="stat-row">
+        <div class="stat-box"><div class="num"><%= store.watches.length %></div><div class="lbl">Relógios cadastrados</div></div>
+        <div class="stat-box"><div class="num">R$ <%= planInfo.price %></div><div class="lbl">Mensalidade do plano</div></div>
+        <div class="stat-box"><div class="num"><%= store.slug %></div><div class="lbl">Sua URL: /loja/<%= store.slug %></div></div>
+      </div>
+
+      <div class="dash-section">
+        <h2>Perfil da loja</h2>
+        <form method="post" action="/painel/perfil">
+          <div class="field-row">
+            <div class="field">
+              <label>Nome da loja</label>
+              <input type="text" name="storeName" value="<%= store.storeName %>">
+            </div>
+            <div class="field">
+              <label>WhatsApp</label>
+              <input type="text" name="whatsapp" value="<%= store.whatsapp %>">
+            </div>
+          </div>
+          <div class="field">
+            <label>Descrição da loja</label>
+            <textarea name="description" placeholder="Conte um pouco sobre sua loja"><%= store.description %></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Salvar perfil</button>
+        </form>
+      </div>
+
+      <hr class="divider">
+
+      <div class="dash-section">
+        <h2>Adicionar relógio ao catálogo</h2>
+        <form method="post" action="/painel/relogios">
+          <div class="field-row">
+            <div class="field"><label>Marca</label><input type="text" name="brand" required></div>
+            <div class="field"><label>Modelo</label><input type="text" name="model" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Referência</label><input type="text" name="ref"></div>
+            <div class="field"><label>Preço (R$)</label><input type="number" step="0.01" name="price" required></div>
+          </div>
+          <div class="field">
+            <label>Condição</label>
+            <select name="condition">
+              <option>Novo</option>
+              <option>Seminovo</option>
+              <option>Vintage</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Descrição</label>
+            <textarea name="description"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Adicionar relógio</button>
+        </form>
+      </div>
+
+      <hr class="divider">
+
+      <div class="dash-section">
+        <h2>Meu catálogo</h2>
+        <% if (store.watches.length === 0) { %>
+          <div class="empty-state">Você ainda não cadastrou nenhum relógio. Use o formulário acima para começar.</div>
+        <% } else { %>
+          <table class="table-simple">
+            <thead><tr><th>Marca</th><th>Modelo</th><th>Preço</th><th>Condição</th><th></th></tr></thead>
+            <tbody>
+              <% store.watches.forEach(w => { %>
+                <tr>
+                  <td><%= w.brand %></td>
+                  <td><%= w.model %><% if(w.ref){ %><br><span class="small muted">Ref. <%= w.ref %></span><% } %></td>
+                  <td>R$ <%= Number(w.price).toLocaleString('pt-BR', {minimumFractionDigits:2}) %></td>
+                  <td><%= w.condition %></td>
+                  <td>
+                    <form method="post" action="/painel/relogios/<%= w.id %>/excluir" onsubmit="return confirm('Remover este relógio?')">
+                      <button type="submit" class="del-btn">Remover</button>
+                    </form>
+                  </td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

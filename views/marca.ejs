@@ -1,0 +1,45 @@
+<%- include('partials/header', { pageTitle: brand.name }) %>
+
+<section class="brand-hero">
+  <div class="container">
+    <span class="eyebrow"><%= brand.country %> · fundada em <%= brand.founded %></span>
+    <h1><%= brand.name %></h1>
+    <p style="max-width:60ch; color:#e7e3d5;"><%= brand.tagline %></p>
+    <div class="brand-meta">
+      <div><strong><%= brand.founded %></strong><span class="small">Ano de fundação</span></div>
+      <div><strong><%= brand.country %></strong><span class="small">Origem</span></div>
+      <div><strong><%= watches.length %></strong><span class="small">Peças no catálogo IM Watches</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="container" style="padding:50px 32px;">
+  <div class="two-col" style="align-items:flex-start;">
+    <div>
+      <h2>História</h2>
+      <p style="max-width:66ch;"><%= brand.history %></p>
+      <div class="highlight-box"><%= brand.highlight %></div>
+    </div>
+    <div class="thumb" style="border:1px solid var(--line); background:var(--white); padding:30px;">
+      <%- include('partials/watch-svg') %>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-head">
+    <h2>Relógios <%= brand.name %> disponíveis</h2>
+    <a href="/pronta-entrega" class="see-all">Ver todo o catálogo</a>
+  </div>
+  <% if (watches.length === 0) { %>
+    <div class="empty-state">No momento não há peças desta marca em estoque. Fale com um especialista para localização sob encomenda.</div>
+  <% } else { %>
+    <div class="grid-products">
+      <% watches.forEach(w => { %>
+        <%- include('partials/watch-card', { w }) %>
+      <% }) %>
+    </div>
+  <% } %>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,42 @@
+<%- include('partials/header', { pageTitle: 'Planos' }) %>
+
+<div class="container" style="padding-top:50px; text-align:center;">
+  <span class="eyebrow">IM Watches para lojistas</span>
+  <h1 class="mx-auto" style="max-width:16ch;">Sua loja de relógios dentro da IM Watches</h1>
+  <p class="mx-auto" style="max-width:60ch;">Cadastre-se, monte seu catálogo e ganhe uma vitrine própria com o mesmo padrão de confiança e curadoria que construímos para nossos clientes. Cancele quando quiser.</p>
+</div>
+
+<div class="container" style="padding:40px 32px 90px;">
+  <div class="plans-grid">
+    <% plans.forEach(p => { %>
+      <div class="plan-card <%= p.highlighted ? 'highlighted' : '' %>">
+        <% if (p.highlighted) { %><div class="plan-badge">Mais escolhido</div><% } %>
+        <h3><%= p.name %></h3>
+        <p class="small muted"><%= p.tagline %></p>
+        <div class="plan-price"><span class="value">R$ <%= p.price %></span><span class="period">/ <%= p.period %></span></div>
+        <ul>
+          <% p.features.forEach(f => { %><li><%= f %></li><% }) %>
+        </ul>
+        <a href="/cadastro?plano=<%= p.slug %>" class="btn <%= p.highlighted ? 'btn-brass' : 'btn-primary' %> btn-block"><%= p.cta %></a>
+      </div>
+    <% }) %>
+  </div>
+
+  <hr class="divider">
+
+  <div class="two-col">
+    <div>
+      <h2>Como funciona</h2>
+      <p>1. Escolha um plano e crie sua conta em menos de 2 minutos.<br>
+      2. Personalize sua vitrine com nome, descrição e WhatsApp de contato.<br>
+      3. Cadastre seus relógios com fotos, referência e preço.<br>
+      4. Compartilhe o link da sua loja — imwatches.com.br/loja/seu-nome — e comece a vender.</p>
+      <a href="/cadastro" class="btn btn-primary">Criar minha loja agora</a>
+    </div>
+    <div class="highlight-box">
+      Já tem uma conta? <a href="/login" style="text-decoration:underline;">Acesse seu painel</a> para gerenciar seu catálogo.
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,48 @@
+<%- include('partials/header', { pageTitle: title }) %>
+
+<div class="container" style="padding-top:40px;">
+  <h1><%= title %></h1>
+  <p class="muted"><%= subtitle %></p>
+  <hr class="divider" style="margin:24px 0 36px;">
+
+  <div class="catalog-layout">
+    <aside class="filters">
+      <h4>Marca</h4>
+      <ul>
+        <li><a href="<%= basePath %>" class="<%= activeMarca==='' ? 'active' : '' %>">Todas</a></li>
+        <% brands.forEach(b => { %>
+          <li><a href="<%= basePath %>?marca=<%= encodeURIComponent(b) %>" class="<%= activeMarca===b ? 'active' : '' %>"><%= b %></a></li>
+        <% }) %>
+      </ul>
+      <h4>Vender na IM Watches</h4>
+      <p class="small muted">Tem um catálogo próprio? Anuncie seus relógios aqui.</p>
+      <a href="/planos" class="btn btn-ghost btn-sm">Ver planos</a>
+    </aside>
+
+    <div>
+      <div class="catalog-toolbar">
+        <span class="small muted"><%= watches.length %> peça<%= watches.length===1?'':'s' %></span>
+        <form method="get">
+          <% if (activeMarca) { %><input type="hidden" name="marca" value="<%= activeMarca %>"><% } %>
+          <select name="ordenar" onchange="this.form.submit()">
+            <option value="" <%= activeOrdenar==='' ? 'selected':'' %>>Mais recentes</option>
+            <option value="menor-preco" <%= activeOrdenar==='menor-preco' ? 'selected':'' %>>Menor preço</option>
+            <option value="maior-preco" <%= activeOrdenar==='maior-preco' ? 'selected':'' %>>Maior preço</option>
+          </select>
+        </form>
+      </div>
+
+      <% if (watches.length === 0) { %>
+        <div class="empty-state">Nenhuma peça encontrada com esse filtro.</div>
+      <% } else { %>
+        <div class="grid-products">
+          <% watches.forEach(w => { %>
+            <%- include('partials/watch-card', { w }) %>
+          <% }) %>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

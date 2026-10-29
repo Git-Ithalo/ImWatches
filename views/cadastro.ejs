@@ -1,0 +1,52 @@
+<%- include('partials/header', { pageTitle: 'Criar minha loja' }) %>
+
+<div class="container">
+  <div class="form-wide">
+    <span class="eyebrow">Cadastro de lojista</span>
+    <h1>Crie sua loja na IM Watches</h1>
+    <p class="muted">Leva menos de 2 minutos. Depois você acessa seu painel para completar o catálogo.</p>
+
+    <% if (error) { %><div class="form-alert"><%= error %></div><% } %>
+
+    <form method="post" action="/cadastro">
+      <h4 style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:26px 0 12px;">Escolha seu plano</h4>
+      <div class="plan-pick">
+        <% plans.forEach(p => { %>
+          <label>
+            <input type="radio" name="plan" value="<%= p.slug %>" <%= selectedPlan===p.slug ? 'checked' : '' %>>
+            <span><%= p.name %><br><small>R$ <%= p.price %>/mês</small></span>
+          </label>
+        <% }) %>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Nome da loja</label>
+          <input type="text" name="storeName" placeholder="Ex: Relógios do João" required>
+        </div>
+        <div class="field">
+          <label>Seu nome</label>
+          <input type="text" name="ownerName" placeholder="Nome completo" required>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>E-mail</label>
+          <input type="email" name="email" placeholder="voce@email.com" required>
+        </div>
+        <div class="field">
+          <label>WhatsApp</label>
+          <input type="text" name="whatsapp" placeholder="(41) 90000-0000">
+        </div>
+      </div>
+      <div class="field">
+        <label>Senha</label>
+        <input type="password" name="password" placeholder="Crie uma senha" required minlength="6">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Criar minha loja</button>
+      <p class="small muted" style="margin-top:14px;">Ao continuar, você concorda com nossos termos de uso. Já tem conta? <a href="/login" style="text-decoration:underline;">Entrar</a>.</p>
+    </form>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
